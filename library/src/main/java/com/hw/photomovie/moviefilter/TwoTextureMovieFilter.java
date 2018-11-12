@@ -123,6 +123,9 @@ public class TwoTextureMovieFilter extends BaseMovieFilter {
             if (mTexture2Id != GLUtil.NO_TEXTURE) {
                 GLES20.glDeleteTextures(1, new int[]{mTexture2Id}, 0);
             }
+            if (mBitmap == null) {
+                return;
+            }
             mTexture2Id = GLUtil.loadTexture(mBitmap, GLUtil.NO_TEXTURE, false);
         }
     }
