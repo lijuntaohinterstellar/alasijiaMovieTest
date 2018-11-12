@@ -28,7 +28,7 @@ public interface PhotoMovieAdapter {
     void setTransfermation(PhotoMovieFactory.PhotoMovieType movieType);
 
     /**
-     * 设置影集转场效果
+     * 设置影集滤镜效果
      * @param type
      * @return
      */
