@@ -6,9 +6,7 @@ import com.hw.photomovie.util.MLog;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
-/**
- * Created by huangwei on 2018/9/6 0006.
- */
+
 public class GLTextureMovieRender extends GLSurfaceMovieRenderer {
 
     private static final String TAG = "GLTextureMovieRender";

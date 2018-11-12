@@ -21,9 +21,7 @@ import com.hw.photomovie.util.MLog;
 import java.io.FileDescriptor;
 import java.util.List;
 
-/**
- * Created by huangwei on 2015/5/22.
- */
+
 public class PhotoMoviePlayer implements MovieTimer.MovieListener {
 
     private static final String TAG = "PhotoMoviePlayer";

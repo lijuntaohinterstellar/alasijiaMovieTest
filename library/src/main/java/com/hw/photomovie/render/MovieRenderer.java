@@ -11,9 +11,7 @@ import com.hw.photomovie.segment.WaterMarkSegment;
 
 import java.util.List;
 
-/**
- * Created by huangwei on 2015/5/26.
- */
+
 public abstract class MovieRenderer<T> {
     protected PhotoMovie<T> mPhotoMovie;
     protected volatile int mElapsedTime;

@@ -11,9 +11,7 @@ import com.hw.photomovie.util.MLog;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by huangwei on 2015/5/25.
- */
+
 public class PhotoMovie<T> {
     private static final String TAG = "PhotoMovie";
     private PhotoSource mPhotoSource;

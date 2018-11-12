@@ -11,9 +11,7 @@ import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/**
- * Created by huangwei on 2015/5/26.
- */
+
 public class GLSurfaceMovieRenderer extends GLMovieRenderer implements GLSurfaceView.Renderer {
 
     private GLSurfaceView mGLSurfaceView;

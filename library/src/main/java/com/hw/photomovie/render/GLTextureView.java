@@ -24,9 +24,6 @@ import java.io.Writer;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 
-/**
- * Created by huangwei on 2018/9/11 0011.
- */
 public class GLTextureView extends TextureView implements TextureView.SurfaceTextureListener {
     private final static String TAG = "GLSurfaceView";
     private final static boolean LOG_ATTACH_DETACH = true;

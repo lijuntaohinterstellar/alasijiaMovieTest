@@ -18,9 +18,7 @@ import com.hw.photomovie.util.BitmapUtil;
 
 import java.util.List;
 
-/**
- * Created by huangwei on 2015/5/26.
- */
+
 public abstract class GLMovieRenderer extends MovieRenderer<GLESCanvas> {
 
     private FboTexture mFboTexture;

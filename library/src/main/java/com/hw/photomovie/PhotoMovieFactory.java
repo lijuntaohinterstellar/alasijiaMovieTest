@@ -21,9 +21,7 @@ import com.hw.photomovie.segment.layer.MovieLayer;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by huangwei on 2015/5/29.
- */
+
 public class PhotoMovieFactory {
     public enum PhotoMovieType {
         THAW,  //融雪
