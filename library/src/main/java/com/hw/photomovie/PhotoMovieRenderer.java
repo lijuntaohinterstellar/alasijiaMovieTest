@@ -48,7 +48,7 @@ public class PhotoMovieRenderer implements IMovieTimer.MovieListener, PhotoMovie
     private GLSurfaceMovieRenderer mMovieRenderer;
     private Uri mMusicUri;
     private PhotoMovieFactory.PhotoMovieType mMovieType =
-            PhotoMovieFactory.PhotoMovieType.SCALE_TRANS;
+            PhotoMovieFactory.PhotoMovieType.HORIZONTAL_TRANS;
     Activity mActivity;
     GLTextureView mGLTextureView;
     FilterItem mFilterItem;

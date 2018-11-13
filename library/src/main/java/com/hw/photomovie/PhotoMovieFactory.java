@@ -24,36 +24,36 @@ import java.util.List;
 
 public class PhotoMovieFactory {
     public enum PhotoMovieType {
-        THAW,  //融雪
+       // THAW,  //融雪
         SCALE, //缩放
-        SCALE_TRANS, //缩放 OR 平移
+ //       SCALE_TRANS, //缩放 OR 平移
         WINDOW, //窗扉
         HORIZONTAL_TRANS,//横向平移
         VERTICAL_TRANS,//纵向平移
-        GRADIENT,//渐变
-        TEST
+//        GRADIENT,//渐变
+//        TEST
     }
 
     public static final int END_GAUSSIANBLUR_DURATION = 1500;
 
     public static PhotoMovie generatePhotoMovie(PhotoSource photoSource, PhotoMovieType type) {
         switch (type) {
-            case THAW:
-                return generateThawPhotoMovie(photoSource);
+//            case THAW:
+//                return generateThawPhotoMovie(photoSource);
             case SCALE:
                 return generateScalePhotoMovie(photoSource);
-            case SCALE_TRANS:
-                return generateScaleTransPhotoMovie(photoSource);
+//            case SCALE_TRANS:
+//                return generateScaleTransPhotoMovie(photoSource);
             case WINDOW:
                 return generateWindowPhotoMovie(photoSource);
             case HORIZONTAL_TRANS:
                 return generateHorizontalTransPhotoMovie(photoSource);
             case VERTICAL_TRANS:
                 return generateVerticalTransPhotoMovie(photoSource);
-            case GRADIENT:
-                return genGradientPhotoMovie(photoSource);
-            case TEST:
-                return generateTestPhotoMovie(photoSource);
+//            case GRADIENT:
+//                return genGradientPhotoMovie(photoSource);
+//            case TEST:
+//                return generateTestPhotoMovie(photoSource);
             default:
                 return null;
         }

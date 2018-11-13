@@ -13,12 +13,12 @@ public class FilterItem {
         switch (type) {
             case GRAY:
                 return new GrayMovieFilter();
-            case SNOW:
-                return new SnowMovieFilter();
-            case CAMEO:
-                return new CameoMovieFilter();
-            case KUWAHARA:
-                return new KuwaharaMovieFilter();
+//            case SNOW:
+//                return new SnowMovieFilter();
+//            case CAMEO:
+//                return new CameoMovieFilter();
+//            case KUWAHARA:
+//                return new KuwaharaMovieFilter();
             case LUT1:
                 return new LutMovieFilter(LutMovieFilter.LutType.A);
             case LUT2:
