@@ -41,9 +41,19 @@ public class MainActivity extends Activity {
         mGLTextureView = new GLTextureView(this);
         mPhotoMovieAdapter = new PhotoMovieRenderer(this, mGLTextureView);
 
-        mImages.add("/storage/emulated/0/DCIM/Compose20181026205024.jpg");
-        mImages.add("/storage/emulated/0/DCIM/Compose20181026151149.jpg");
-        mImages.add("/storage/emulated/0/DCIM/Compose20181106113729.jpg");
+//        mImages.add("/storage/emulated/0/DCIM/Compose20181026205024.jpg");
+//        mImages.add("/storage/emulated/0/DCIM/Compose20181026151149.jpg");
+//        mImages.add("/storage/emulated/0/DCIM/Compose20181106113729.jpg");
+
+        mImages.add("/storage/emulated/0/DCIM/Camera/IMG_20181112_140104.jpg");
+        mImages.add("/storage/emulated/0/DCIM/Camera/IMG_20181112_140059.jpg");
+        mImages.add("/storage/emulated/0/DCIM/Camera/IMG_20181113_112901.jpg");
+        mImages.add("/storage/emulated/0/DCIM/Camera/IMG_20181113_112900.jpg");
+        mImages.add("/storage/emulated/0/DCIM/Camera/IMG_20181113_112859.jpg");
+        mImages.add("/storage/emulated/0/DCIM/Camera/IMG_20181113_112857.jpg");
+        mImages.add("/storage/emulated/0/DCIM/Camera/IMG_20181113_112855.jpg");
+        mImages.add("/storage/emulated/0/DCIM/Camera/IMG_20181113_112853.jpg");
+        mImages.add("/storage/emulated/0/DCIM/Camera/IMG_20181113_113723.jpg");
 
         setContentView(mGLTextureView);
 
@@ -56,53 +66,53 @@ public class MainActivity extends Activity {
             }
         }, 500);
 
-        mHandler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                // 切换动画效果
-                mPhotoMovieAdapter.setTransfermation(PhotoMovieFactory.PhotoMovieType.SCALE);
-
-            }
-        }, 3000);
-
-        mHandler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                // 设置滤镜
-                mPhotoMovieAdapter.setFilter(FilterType.GRAY);
-
-            }
-        }, 5000);
-
-        mHandler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                // 合成视频
-                mPhotoMovieAdapter.composeVideo("", "");
-
-            }
-        }, 7000);
-
-        mHandler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                // 设置滤镜
-                mPhotoMovieAdapter.onPause();
-                mGLTextureView.onPause();
-                Log.i("mainActivity", "onPause");
-            }
-        }, 20000);
-
-        mHandler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                //
-                mPhotoMovieAdapter.onResume();
-                mGLTextureView.onResume();
-                Log.i("mainActivity", "onResume");
-
-            }
-        }, 23000);
+//        mHandler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                // 切换动画效果
+//                mPhotoMovieAdapter.setTransfermation(PhotoMovieFactory.PhotoMovieType.SCALE);
+//
+//            }
+//        }, 3000);
+//
+//        mHandler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                // 设置滤镜
+//                mPhotoMovieAdapter.setFilter(FilterType.GRAY);
+//
+//            }
+//        }, 5000);
+//
+//        mHandler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                // 合成视频
+//                mPhotoMovieAdapter.composeVideo("", "");
+//
+//            }
+//        }, 7000);
+//
+//        mHandler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                // 设置滤镜
+//                mPhotoMovieAdapter.onPause();
+//                mGLTextureView.onPause();
+//                Log.i("mainActivity", "onPause");
+//            }
+//        }, 20000);
+//
+//        mHandler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                //
+//                mPhotoMovieAdapter.onResume();
+//                mGLTextureView.onResume();
+//                Log.i("mainActivity", "onResume");
+//
+//            }
+//        }, 23000);
 
 //        mHandler.postDelayed(new Runnable() {
 //            @Override

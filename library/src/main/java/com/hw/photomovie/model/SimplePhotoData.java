@@ -22,6 +22,9 @@ public class SimplePhotoData extends PhotoData {
     private Context mContext;
     private Handler mHandler = new Handler(Looper.getMainLooper());
 
+    private final int mDataMaxWidth = 800;
+    private final int mDataMaxHeight = 1600;
+
     public SimplePhotoData(Context context, String uri, int state) {
         super(uri, state);
         mContext = context.getApplicationContext();
@@ -128,8 +131,29 @@ public class SimplePhotoData extends PhotoData {
             }
         }else{
             String path = uri;
-            bitmap = BitmapFactory.decodeFile(path);
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inJustDecodeBounds = false;
+            options.inSampleSize = computeSampleSize(path);
+            bitmap = BitmapFactory.decodeFile(path, options);
         }
         return bitmap;
+    }
+
+    private int computeSampleSize(String path) {
+        int sampleSize = 1;
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        Bitmap bitmap = BitmapFactory.decodeFile(path, options);
+        int width = options.outWidth;
+        int height = options.outHeight;
+        int rate = width * height / (mDataMaxWidth * mDataMaxHeight);
+        if (rate == 0) {
+            return sampleSize;
+        }
+        else {
+            sampleSize = (int)Math.sqrt(rate + 1) + 1;
+        }
+
+        return sampleSize;
     }
 }
