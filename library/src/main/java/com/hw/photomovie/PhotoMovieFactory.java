@@ -89,16 +89,47 @@ public class PhotoMovieFactory {
     }
 
     private static PhotoMovie generateWindowPhotoMovie(PhotoSource photoSource) {
-        List<MovieSegment<GLESCanvas>> segmentList = new ArrayList<MovieSegment<GLESCanvas>>(7);
-        segmentList.add(new SingleBitmapSegment(500));
-        segmentList.add(new WindowSegment(2.1f, 1f, 2.1f, -1f, -1.1f).removeFirstAnim());
-        segmentList.add(new WindowSegment(-1f, 1f, 1f, -1f, 0f, 0f));
-        segmentList.add(new WindowSegment(-1f, -2.1f, 1f, -2.1f, 1.1f).removeFirstAnim());
-        segmentList.add(new WindowSegment(0f, 1f, 0f, -1f, 0f, 1f));
-        segmentList.add(new WindowSegment(-1f, 0f, 1f, 0f, -1f, 0f));
-        segmentList.add(new EndGaussianBlurSegment(END_GAUSSIANBLUR_DURATION));
+        List<MovieSegment<GLESCanvas>> segmentList = new ArrayList<MovieSegment<GLESCanvas>>();
+        for (int i = 0; i < photoSource.size(); i ++) {
+            if (i == 0) {
+                segmentList.add(new SingleBitmapSegment(500));
+            }
+            else {
+                segmentList.add(generateWindowSeg(i));
+            }
+        }
+
         PhotoMovie<GLESCanvas> photoMovie = new PhotoMovie<GLESCanvas>(photoSource, segmentList);
         return photoMovie;
+    }
+
+    private static MovieSegment<GLESCanvas> generateWindowSeg(int i) {
+
+        switch (i) {
+
+            case 1:
+                return new WindowSegment(2.1f, 1f, 2.1f, -1f,
+                        -1.1f).removeFirstAnim();
+            case 2:
+                return new WindowSegment(-1f, 1f, 1f, -1f, 0f, 0f);
+            case 3:
+                return new WindowSegment(-1f, -2.1f,
+                        1f, -2.1f, 1.1f).removeFirstAnim();
+            case 4:
+                return new WindowSegment(0f, 1f, 0f, -1f, 0f, 1f);
+            case 5:
+                return new WindowSegment(-1f, 0f, 1f, 0f, -1f, 0f);
+            case 6:
+                return new WindowSegment(2.1f, 1f, 2.1f, -1f,
+                        -1.1f).removeFirstAnim();
+            case 7:
+                return new WindowSegment(-1f, 1f, 1f, -1f, 0f, 0f);
+            case 8:
+                return new WindowSegment(-1f, -2.1f,
+                        1f, -2.1f, 1.1f).removeFirstAnim();
+            default:
+                return null;
+        }
     }
 
     private static PhotoMovie generateScalePhotoMovie(PhotoSource photoSource) {
