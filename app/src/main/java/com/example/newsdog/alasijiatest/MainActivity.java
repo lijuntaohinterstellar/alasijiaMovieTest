@@ -61,7 +61,7 @@ public class MainActivity extends Activity {
             @Override
             public void run() {
                 // 添加图片序列
-                mPhotoMovieAdapter.addImages(mImages);
+                mPhotoMovieAdapter.addImages(mImages, PhotoMovieFactory.PhotoMovieType.WINDOW);
 
             }
         }, 500);

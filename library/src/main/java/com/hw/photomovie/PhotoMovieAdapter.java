@@ -15,10 +15,10 @@ public interface PhotoMovieAdapter {
 
     /**
      * 添加图片集合，生成照片电影
-     * @param paths
+     * @param paths, type
      * @return
      */
-    void addImages(ArrayList<String> paths);
+    void addImages(ArrayList<String> paths, PhotoMovieFactory.PhotoMovieType type);
 
     /**
      * 设置影集转场效果

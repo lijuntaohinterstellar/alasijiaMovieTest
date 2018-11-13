@@ -69,7 +69,7 @@ public class PhotoMovieRenderer implements IMovieTimer.MovieListener, PhotoMovie
      * @return
      */
     @Override
-    public void addImages(ArrayList<String> paths) {
+    public void addImages(ArrayList<String> paths, PhotoMovieFactory.PhotoMovieType type) {
         List<PhotoData> photoDataList = new ArrayList<PhotoData>(paths.size());
         for (String path : paths) {
             PhotoData photoData = new SimplePhotoData(mActivity, path,
@@ -82,7 +82,7 @@ public class PhotoMovieRenderer implements IMovieTimer.MovieListener, PhotoMovie
         } else {
             mPhotoMoviePlayer.stop();
             mPhotoMovie = PhotoMovieFactory.generatePhotoMovie(photoSource,
-                    PhotoMovieFactory.PhotoMovieType.HORIZONTAL_TRANS);
+                    type);
             mPhotoMoviePlayer.setDataSource(mPhotoMovie);
             if (mMusicUri != null) {
                 mPhotoMoviePlayer.setMusic(mActivity, mMusicUri);
