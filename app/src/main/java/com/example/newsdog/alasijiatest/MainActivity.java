@@ -3,6 +3,7 @@ package com.example.newsdog.alasijiatest;
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.graphics.SurfaceTexture;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.annotation.Nullable;
@@ -19,6 +20,8 @@ import com.hw.photomovie.PhotoMovieRenderer;
 import com.hw.photomovie.filter.FilterType;
 import com.hw.photomovie.render.GLTextureView;
 
+import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 
@@ -84,23 +87,35 @@ public class MainActivity extends Activity {
             }
         }, 2000);
 
-        mHandler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                // 设置滤镜
-                mPhotoMovieAdapter.setFilter(FilterType.NONE);
-
-            }
-        }, 5000);
-//
 //        mHandler.postDelayed(new Runnable() {
 //            @Override
 //            public void run() {
-//                // 合成视频
-//                mPhotoMovieAdapter.composeVideo("", "");
+//                String path = "file:///storage/emulated/0/MIUI/music/mp3/%E6%B2%99%E6%BC%A0%E9%AA%86%E9%A9%BC_%E5%B1%95%E5%B1%95%E4%B8%8E%E7%BD%97%E7%BD%97_%E6%B2%99%E6%BC%A0%E9%AA%86%E9%A9%BC.mp3";
+//                // 设置滤镜
+//                mPhotoMovieAdapter.setMusic(null);
 //
 //            }
-//        }, 7000);
+//        }, 3000);
+
+//        mHandler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                // 设置滤镜
+//                mPhotoMovieAdapter.setFilter(FilterType.NONE);
+//
+//            }
+//        }, 5000);
+//
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // 合成视频
+                mPhotoMovieAdapter.composeVideo("", "");
+//                composeVideo(R.drawable.w, initVideoFile().getAbsolutePath());
+
+
+            }
+        }, 7000);
 //
 //        mHandler.postDelayed(new Runnable() {
 //            @Override
@@ -131,6 +146,17 @@ public class MainActivity extends Activity {
 //
 //            }
 //        }, 7000);
+    }
+    private File initVideoFile() {
+        File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MOVIES);
+        if (!dir.exists()) {
+            dir.mkdirs();
+        }
+        if (!dir.exists()) {
+            dir = getCacheDir();
+        }
+        return new File(dir, String.format("photo_movie_%s.mp4",
+                new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss").format(System.currentTimeMillis())));
     }
 
     @Override

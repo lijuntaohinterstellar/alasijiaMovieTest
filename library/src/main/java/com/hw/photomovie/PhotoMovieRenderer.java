@@ -36,9 +36,8 @@ import java.util.List;
 
 /**
  * 影集 Adapter, 提供外部调用影集模块接口的具体实现
- *
  */
-public class PhotoMovieRenderer implements IMovieTimer.MovieListener, PhotoMovieAdapter{
+public class PhotoMovieRenderer implements IMovieTimer.MovieListener, PhotoMovieAdapter {
 
 
     private final String TAG = "PhotoMovieRenderer";
@@ -65,6 +64,7 @@ public class PhotoMovieRenderer implements IMovieTimer.MovieListener, PhotoMovie
 
     /**
      * 添加图片集合，生成照片电影
+     *
      * @param paths
      * @return
      */
@@ -153,6 +153,7 @@ public class PhotoMovieRenderer implements IMovieTimer.MovieListener, PhotoMovie
 
     /**
      * 设置影集转场效果
+     *
      * @param movieType
      * @return
      */
@@ -193,6 +194,7 @@ public class PhotoMovieRenderer implements IMovieTimer.MovieListener, PhotoMovie
 
     /**
      * 设置影集转场效果
+     *
      * @param type
      * @return
      */
@@ -205,6 +207,7 @@ public class PhotoMovieRenderer implements IMovieTimer.MovieListener, PhotoMovie
 
     /**
      * 设置影集音乐
+     *
      * @param uri
      * @return
      */
@@ -213,13 +216,26 @@ public class PhotoMovieRenderer implements IMovieTimer.MovieListener, PhotoMovie
         mPhotoMoviePlayer.setMusic(mActivity, uri);
     }
 
+
+    @Override
+    public void composeVideo(int waterDrawable, String filePath) {
+        Bitmap waterMark = BitmapFactory.decodeResource(mActivity.getResources(), waterDrawable);
+        composeVideo(waterMark, filePath);
+    }
+
+    @Override
+    public void composeVideo(String waterMarkPath, String filePath) {
+        Bitmap waterMark = BitmapFactory.decodeFile(waterMarkPath);
+        composeVideo(waterMark, filePath);
+    }
+
     /**
      * 合成影集视频
+     *
      * @param
      * @return
      */
-    @Override
-    public void composeVideo(String waterMark, String filePath) {
+    public void composeVideo(Bitmap waterMark, String filePath) {
         mPhotoMoviePlayer.pause();
 //        final ProgressDialog dialog = new ProgressDialog(mActivity);
 //        dialog.setMessage("saving video...");
@@ -229,7 +245,7 @@ public class PhotoMovieRenderer implements IMovieTimer.MovieListener, PhotoMovie
 //        dialog.show();
         final long startRecodTime = System.currentTimeMillis();
         final GLMovieRecorder recorder = new GLMovieRecorder(mActivity);
-        final File file = initVideoFile();
+        final File file = new File(filePath);
         int bitrate = mGLTextureView.getWidth()
                 * mGLTextureView.getHeight() > 1000 * 1500 ? 8000000 : 4000000;
         recorder.configOutput(mGLTextureView.getWidth(),
@@ -238,25 +254,23 @@ public class PhotoMovieRenderer implements IMovieTimer.MovieListener, PhotoMovie
         //生成一个全新的MovieRender，不然与现有的GL环境不一致，相互干扰容易出问题
         PhotoMovie newPhotoMovie = PhotoMovieFactory.generatePhotoMovie(mPhotoMovie.getPhotoSource(), mMovieType);
         //添加水印
-//        Bitmap waterMarkTest = BitmapFactory.decodeResource(mActivity.getResources(),
-//                R.drawable.watermark);
+
 //        DisplayMetrics displayMetrics = mActivity.getResources().getDisplayMetrics();
 //        mMovieRenderer.setWaterMark(waterMarkTest,new RectF(
 //                displayMetrics.widthPixels-waterMarkTest.getWidth(),0,
 //                displayMetrics.widthPixels,waterMarkTest.getHeight()),0.5f);
 
-        Bitmap bitmap = BitmapFactory.decodeFile(waterMark);
-        if (bitmap != null) {
+        if (waterMark != null) {
             DisplayMetrics displayMetrics = mActivity.getResources().getDisplayMetrics();
-            mMovieRenderer.setWaterMark(bitmap, new RectF(
-                    displayMetrics.widthPixels-bitmap.getWidth(), 0,
-                    displayMetrics.widthPixels,bitmap.getHeight()), 1f);
+            mMovieRenderer.setWaterMark(waterMark, new RectF(
+                    displayMetrics.widthPixels - waterMark.getWidth(), 0,
+                    displayMetrics.widthPixels, waterMark.getHeight()), 1f);
         }
 
         GLSurfaceMovieRenderer newMovieRenderer = new GLSurfaceMovieRenderer(mMovieRenderer);
         newMovieRenderer.setPhotoMovie(newPhotoMovie);
         String audioPath = null;
-        if(mMusicUri!=null) {
+        if (mMusicUri != null) {
             audioPath = UriUtil.getPath(mActivity, mMusicUri);
         }
         if (!TextUtils.isEmpty(audioPath)) {
@@ -276,23 +290,33 @@ public class PhotoMovieRenderer implements IMovieTimer.MovieListener, PhotoMovie
                 MLog.i("Record", "record:" + (recordEndTime - startRecodTime));
                 //dialog.dismiss();
                 if (success) {
-                    Toast.makeText(mActivity.getApplicationContext(), "Video save to path:" + outputFile.getAbsolutePath(), Toast.LENGTH_LONG).show();
+                    if (mComposeProgressListener != null) {
+                        mComposeProgressListener.onComposedComplete(file);
+                    } else {
+                        Toast.makeText(mActivity.getApplicationContext(), "Video save to path:" + outputFile.getAbsolutePath(), Toast.LENGTH_LONG).show();
 
-                    mActivity.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE,
-                            Uri.fromFile(file)));
+                        mActivity.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE,
+                                Uri.fromFile(file)));
 
 
-                    Intent intent = new Intent();
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    intent.setAction(Intent.ACTION_VIEW);
-                    String type = "video/*";
-                    intent.setDataAndType(Uri.fromFile(outputFile), type);
-                    mActivity.startActivity(intent);
+                        Intent intent = new Intent();
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        intent.setAction(Intent.ACTION_VIEW);
+                        String type = "video/*";
+                        intent.setDataAndType(Uri.fromFile(outputFile), type);
+                        mActivity.startActivity(intent);
+                    }
                 } else {
+                    if (mComposeProgressListener != null) {
+                        mComposeProgressListener.onComposedError(1);
+                    }
                     Toast.makeText(mActivity.getApplicationContext(), "com.hw.photomovie.record error!", Toast.LENGTH_LONG).show();
                 }
-                if(recorder.getAudioRecordException() != null) {
-                    Toast.makeText(mActivity.getApplicationContext(), "record audio failed:"+recorder.getAudioRecordException().toString(), Toast.LENGTH_LONG).show();
+                if (recorder.getAudioRecordException() != null) {
+                    if (mComposeProgressListener != null) {
+                        mComposeProgressListener.onComposedError(0);
+                    }
+                    Toast.makeText(mActivity.getApplicationContext(), "record audio failed:" + recorder.getAudioRecordException().toString(), Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -308,6 +332,7 @@ public class PhotoMovieRenderer implements IMovieTimer.MovieListener, PhotoMovie
 
     /**
      * 当前Activity启动另一个Activity时调用，外部紧接着调用GLTextureView对象的onPause()方法
+     *
      * @param
      */
     @Override
@@ -319,6 +344,7 @@ public class PhotoMovieRenderer implements IMovieTimer.MovieListener, PhotoMovie
 
     /**
      * 返回当前Activity时调用，外部紧接着调用GLTextureView对象的onResume()方法
+     *
      * @param
      */
     @Override
@@ -333,7 +359,7 @@ public class PhotoMovieRenderer implements IMovieTimer.MovieListener, PhotoMovie
 
     @Override
     public void setProgressListener(PhotoMovieRenderer.OnComposeProgressListener lister) {
-        mComposeProgressListener = lister ;
+        mComposeProgressListener = lister;
     }
 
     /**
@@ -341,7 +367,12 @@ public class PhotoMovieRenderer implements IMovieTimer.MovieListener, PhotoMovie
      */
     public static interface OnComposeProgressListener {
         void onComposedProgress(int progress);
+
+        void onComposedComplete(File file);
+
+        void onComposedError(int error);
     }
+
 
     private File initVideoFile() {
         File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MOVIES);
@@ -358,7 +389,6 @@ public class PhotoMovieRenderer implements IMovieTimer.MovieListener, PhotoMovie
 
     @Override
     public void onMovieUpdate(int elapsedTime) {
-
     }
 
     @Override

@@ -49,6 +49,13 @@ public interface PhotoMovieAdapter {
     void composeVideo(String waterMark, String filePath);
 
     /**
+     * 合成影集视频
+     * @param waterDrawable, filePath
+     * @return
+     */
+    void composeVideo(int waterDrawable, String filePath);
+
+    /**
      * 合成视频进度
      * @param lister
      */
