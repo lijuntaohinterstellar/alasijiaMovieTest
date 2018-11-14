@@ -75,14 +75,23 @@ public class MainActivity extends Activity {
 //            }
 //        }, 3000);
 //
-//        mHandler.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                // 设置滤镜
-//                mPhotoMovieAdapter.setFilter(FilterType.GRAY);
-//
-//            }
-//        }, 5000);
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // 设置滤镜
+                mPhotoMovieAdapter.setFilter(FilterType.GRAY);
+
+            }
+        }, 2000);
+
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // 设置滤镜
+                mPhotoMovieAdapter.setFilter(FilterType.NONE);
+
+            }
+        }, 5000);
 //
 //        mHandler.postDelayed(new Runnable() {
 //            @Override

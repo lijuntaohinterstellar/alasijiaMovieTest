@@ -52,7 +52,7 @@ public interface PhotoMovieAdapter {
      * 合成视频进度
      * @param lister
      */
-    void composeProgress(PhotoMovieRenderer.OnComposeProgressListener lister);
+    void setProgressListener(PhotoMovieRenderer.OnComposeProgressListener lister);
 
     /**
      * 当前Activity启动另一个Activity时调用，外部紧接着调用GLTextureView对象的onPause()方法

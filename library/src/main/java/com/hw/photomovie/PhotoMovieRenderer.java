@@ -199,9 +199,8 @@ public class PhotoMovieRenderer implements IMovieTimer.MovieListener, PhotoMovie
     @Override
     public void setFilter(FilterType type) {
         IMovieFilter movieFilter = mFilterItem.initFilter(type);
-        if (movieFilter != null) {
-            mMovieRenderer.setMovieFilter(movieFilter);
-        }
+        mMovieRenderer.setMovieFilter(movieFilter);
+
     }
 
     /**
@@ -333,7 +332,7 @@ public class PhotoMovieRenderer implements IMovieTimer.MovieListener, PhotoMovie
     }
 
     @Override
-    public void composeProgress(PhotoMovieRenderer.OnComposeProgressListener lister) {
+    public void setProgressListener(PhotoMovieRenderer.OnComposeProgressListener lister) {
         mComposeProgressListener = lister ;
     }
 
