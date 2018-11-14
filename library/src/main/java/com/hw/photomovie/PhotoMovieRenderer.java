@@ -157,7 +157,7 @@ public class PhotoMovieRenderer implements IMovieTimer.MovieListener, PhotoMovie
      * @return
      */
     @Override
-    public void setTransfermation(PhotoMovieFactory.PhotoMovieType movieType) {
+    public void setTransition(PhotoMovieFactory.PhotoMovieType movieType) {
         mMovieType = movieType;
         mPhotoMoviePlayer.stop();
         mPhotoMovie = PhotoMovieFactory.generatePhotoMovie(mPhotoMovie.getPhotoSource(), mMovieType);

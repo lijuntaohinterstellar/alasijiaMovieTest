@@ -25,7 +25,7 @@ public interface PhotoMovieAdapter {
      * @param movieType
      * @return
      */
-    void setTransfermation(PhotoMovieFactory.PhotoMovieType movieType);
+    void setTransition(PhotoMovieFactory.PhotoMovieType movieType);
 
     /**
      * 设置影集滤镜效果
