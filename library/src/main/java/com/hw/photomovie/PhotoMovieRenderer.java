@@ -269,9 +269,8 @@ public class PhotoMovieRenderer implements IMovieTimer.MovieListener, PhotoMovie
 
         if (waterMark != null) {
             DisplayMetrics displayMetrics = mActivity.getResources().getDisplayMetrics();
-            mMovieRenderer.setWaterMark(waterMark, new RectF(
-                    displayMetrics.widthPixels - waterMark.getWidth(), 0,
-                    displayMetrics.widthPixels, waterMark.getHeight()), 1f);
+            mMovieRenderer.setWaterMark(waterMark, new RectF(0,
+                    0, waterMark.getWidth(), waterMark.getHeight()), 1f);
         }
 
         GLSurfaceMovieRenderer newMovieRenderer = new GLSurfaceMovieRenderer(mMovieRenderer);
