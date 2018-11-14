@@ -7,13 +7,12 @@ import android.net.Uri;
 
 import java.io.FileDescriptor;
 
-/**
- * Created by huangwei on 2018/9/13 0013.
- */
+
 public interface IMusicPlayer {
     public void start();
     public void stop();
     public void pause();
+    public void cancelMusic();
     public void release();
 
     public void setDataSource(String path);

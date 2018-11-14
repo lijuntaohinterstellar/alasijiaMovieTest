@@ -212,8 +212,15 @@ public class PhotoMovieRenderer implements IMovieTimer.MovieListener, PhotoMovie
      * @return
      */
     public void setMusic(Uri uri) {
-        mMusicUri = uri;
-        mPhotoMoviePlayer.setMusic(mActivity, uri);
+        if (uri != null) {
+            mMusicUri = uri;
+            mPhotoMoviePlayer.setMusic(mActivity, uri);
+            Log.i(TAG, "start music");
+        }
+        else {
+            mPhotoMoviePlayer.stopMusic();
+            Log.i(TAG, "stop music");
+        }
     }
 
 

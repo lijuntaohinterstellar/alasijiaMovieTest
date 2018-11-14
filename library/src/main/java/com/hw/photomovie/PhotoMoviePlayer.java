@@ -99,6 +99,10 @@ public class PhotoMoviePlayer implements MovieTimer.MovieListener {
         mMusicPlayer.setDataSource(fileDescriptor);
     }
 
+    public void stopMusic() {
+        mMusicPlayer.cancelMusic();
+    }
+
     public IMusicPlayer getMusicPlayer() {
         return mMusicPlayer;
     }

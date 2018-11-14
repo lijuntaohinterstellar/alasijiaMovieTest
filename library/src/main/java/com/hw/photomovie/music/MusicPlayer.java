@@ -59,6 +59,12 @@ public class MusicPlayer implements IMusicPlayer {
         }
     }
 
+    public void cancelMusic() {
+        mMediaPlayer.stop();
+        mMediaPlayer.seekTo(0);
+
+    }
+
     /**
      * 淡出式停止,有bug，暂不使用
      *
