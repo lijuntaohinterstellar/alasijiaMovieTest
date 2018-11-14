@@ -244,12 +244,7 @@ public class PhotoMovieRenderer implements IMovieTimer.MovieListener, PhotoMovie
      */
     public void composeVideo(Bitmap waterMark, String filePath) {
         mPhotoMoviePlayer.pause();
-//        final ProgressDialog dialog = new ProgressDialog(mActivity);
-//        dialog.setMessage("saving video...");
-//        dialog.setMax(100);
-//        dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-//        dialog.setCancelable(false);
-//        dialog.show();
+
         final long startRecodTime = System.currentTimeMillis();
         final GLMovieRecorder recorder = new GLMovieRecorder(mActivity);
         final File file = new File(filePath);
@@ -262,10 +257,6 @@ public class PhotoMovieRenderer implements IMovieTimer.MovieListener, PhotoMovie
         PhotoMovie newPhotoMovie = PhotoMovieFactory.generatePhotoMovie(mPhotoMovie.getPhotoSource(), mMovieType);
         //添加水印
 
-//        DisplayMetrics displayMetrics = mActivity.getResources().getDisplayMetrics();
-//        mMovieRenderer.setWaterMark(waterMarkTest,new RectF(
-//                displayMetrics.widthPixels-waterMarkTest.getWidth(),0,
-//                displayMetrics.widthPixels,waterMarkTest.getHeight()),0.5f);
 
         if (waterMark != null) {
             DisplayMetrics displayMetrics = mActivity.getResources().getDisplayMetrics();
@@ -378,20 +369,6 @@ public class PhotoMovieRenderer implements IMovieTimer.MovieListener, PhotoMovie
 
         void onComposedError(int error);
     }
-
-
-    private File initVideoFile() {
-        File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MOVIES);
-        if (!dir.exists()) {
-            dir.mkdirs();
-        }
-        if (!dir.exists()) {
-            dir = mActivity.getCacheDir();
-        }
-        return new File(dir, String.format("photo_movie_%s.mp4",
-                new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss").format(System.currentTimeMillis())));
-    }
-
 
     @Override
     public void onMovieUpdate(int elapsedTime) {
