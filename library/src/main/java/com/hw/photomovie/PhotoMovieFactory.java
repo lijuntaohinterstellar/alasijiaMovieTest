@@ -24,9 +24,9 @@ import java.util.List;
 
 public class PhotoMovieFactory {
     public enum PhotoMovieType {
-       // THAW,  //融雪
-        SCALE, //缩放
- //       SCALE_TRANS, //缩放 OR 平移
+        THAW,  //融雪
+//        SCALE, //缩放
+        SCALE_TRANS, //缩放 OR 平移
         WINDOW, //窗扉
         HORIZONTAL_TRANS,//横向平移
         VERTICAL_TRANS,//纵向平移
@@ -38,12 +38,12 @@ public class PhotoMovieFactory {
 
     public static PhotoMovie generatePhotoMovie(PhotoSource photoSource, PhotoMovieType type) {
         switch (type) {
-//            case THAW:
-//                return generateThawPhotoMovie(photoSource);
-            case SCALE:
-                return generateScalePhotoMovie(photoSource);
-//            case SCALE_TRANS:
-//                return generateScaleTransPhotoMovie(photoSource);
+            case THAW:
+                return generateThawPhotoMovie(photoSource);
+//            case SCALE:
+//                return generateScalePhotoMovie(photoSource);
+            case SCALE_TRANS:
+                return generateScaleTransPhotoMovie(photoSource);
             case WINDOW:
                 return generateWindowPhotoMovie(photoSource);
             case HORIZONTAL_TRANS:
@@ -163,7 +163,7 @@ public class PhotoMovieFactory {
             }
         }
         segmentList.add(new ScaleSegment(1800, 1, 1.1f));
-        segmentList.add(new EndGaussianBlurSegment(END_GAUSSIANBLUR_DURATION));
+        //segmentList.add(new EndGaussianBlurSegment(END_GAUSSIANBLUR_DURATION));
         PhotoMovie photoMovie = new PhotoMovie(photoSource, segmentList);
         return photoMovie;
     }
