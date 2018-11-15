@@ -52,9 +52,9 @@ public abstract class MovieRenderer<T> {
             movieSegment.drawFrame(mPainter, segmentProgress);
             mCurrentSegment = movieSegment;
         }
-        if(mCoverSegment!=null && mPainter instanceof GLESCanvas){
-            mCoverSegment.drawFrame(mPainter,0);
-        }
+//        if(mCoverSegment!=null && mPainter instanceof GLESCanvas){
+//            mCoverSegment.drawFrame(mPainter,0);
+//        }
     }
 
     public void releaseCoverSegment() {

@@ -82,10 +82,10 @@ public class MainActivity extends Activity {
             @Override
             public void run() {
                 // 设置滤镜
-               // mPhotoMovieAdapter.setFilter(FilterType.GRAY);
+                mPhotoMovieAdapter.setFilter(FilterType.GRAY);
 
             }
-        }, 2000);
+        }, 1000);
 
 //        mHandler.postDelayed(new Runnable() {
 //            @Override
@@ -106,15 +106,15 @@ public class MainActivity extends Activity {
 //            }
 //        }, 5000);
 //
-//        mHandler.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                // 合成视频
-//                mPhotoMovieAdapter.composeVideo(R.drawable.water, initVideoFile().getAbsolutePath());
-//
-//
-//            }
-//        }, 7000);
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // 合成视频
+                mPhotoMovieAdapter.composeVideo(R.drawable.water, initVideoFile().getAbsolutePath());
+
+
+            }
+        }, 2000);
 //
 //        mHandler.postDelayed(new Runnable() {
 //            @Override

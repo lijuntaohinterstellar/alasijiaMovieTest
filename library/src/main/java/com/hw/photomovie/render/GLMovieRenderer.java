@@ -122,6 +122,9 @@ public abstract class GLMovieRenderer extends MovieRenderer<GLESCanvas> {
         mPainter.rebindArrayBuffer();
 
         mPainter.drawTexture(mFilterTexture, 0, 0, mViewportRect.width(), mViewportRect.height());
+        if (mCoverSegment != null && mPainter instanceof GLESCanvas) {
+            mCoverSegment.drawFrame(mPainter,  0);
+        }
     }
 
     /**
