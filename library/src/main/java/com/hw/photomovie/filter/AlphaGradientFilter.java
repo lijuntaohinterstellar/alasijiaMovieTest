@@ -5,7 +5,6 @@ import android.graphics.RectF;
 import android.opengl.GLES20;
 
 /**
- * Created by huangwei on 2015/6/9.
  * range[0~1],以top为0，bottom为1，从start到end，alpha值渐变[0~1]
  */
 public class AlphaGradientFilter extends MovieFilter {

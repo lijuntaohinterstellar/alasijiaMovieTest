@@ -10,7 +10,6 @@ import com.hw.photomovie.util.ScaleType;
 import com.hw.photomovie.util.Utils;
 
 /**
- * Created by huangwei on 2015/5/25.
  * 适用于单张bitmap的电影片段
  */
 public class SingleBitmapSegment extends GLMovieSegment {

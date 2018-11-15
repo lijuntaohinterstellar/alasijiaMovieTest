@@ -5,9 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.text.TextPaint;
 
-/**
- * Created by huangwei on 2018/10/27.
- */
+
 public class BitmapUtil {
     public static Bitmap generateBitmap(String text,int textSizePx,int textColor){
         TextPaint textPaint = new TextPaint();

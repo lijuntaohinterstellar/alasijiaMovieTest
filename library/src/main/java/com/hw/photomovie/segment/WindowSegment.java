@@ -10,9 +10,7 @@ import com.hw.photomovie.opengl.GLPaint;
 import com.hw.photomovie.util.AppResources;
 import com.hw.photomovie.util.MLog;
 
-/**
- * Created by huangwei on 2015/6/19.
- */
+
 public class WindowSegment extends SingleBitmapSegment {
 
     private static final int MODE_POINT_APPEAR = 0;

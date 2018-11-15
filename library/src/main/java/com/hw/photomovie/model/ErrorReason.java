@@ -1,9 +1,7 @@
 package com.hw.photomovie.model;
 
 
-/**
- * Created by yellowcat on 2015/6/2.
- */
+
 public class ErrorReason {
 
     private Throwable mThrowable;

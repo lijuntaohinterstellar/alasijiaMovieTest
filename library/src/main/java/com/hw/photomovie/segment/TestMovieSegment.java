@@ -12,9 +12,7 @@ import com.hw.photomovie.opengl.BitmapTexture;
 import com.hw.photomovie.opengl.GLESCanvas;
 import com.hw.photomovie.util.Utils;
 
-/**
- * Created by huangwei on 2015/5/25.
- */
+
 public class TestMovieSegment extends GLMovieSegment {
 
     private BitmapTexture mBitmapTexture;

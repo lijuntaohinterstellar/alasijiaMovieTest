@@ -4,9 +4,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.opengl.GLES20;
 
-/**
- * Created by huangwei on 2015/6/9.
- */
+
 public class AlphaFilter extends MovieFilter {
 
     private static final String ALPHA_UNIFORM = "uAlpha";

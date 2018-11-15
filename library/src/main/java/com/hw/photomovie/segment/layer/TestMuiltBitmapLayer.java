@@ -8,9 +8,7 @@ import com.hw.photomovie.util.ScaleType;
 
 import java.util.List;
 
-/**
- * Created by huangwei on 2015/6/3.
- */
+
 public class TestMuiltBitmapLayer extends MovieLayer {
 
     private Rect mTempRect = new Rect();

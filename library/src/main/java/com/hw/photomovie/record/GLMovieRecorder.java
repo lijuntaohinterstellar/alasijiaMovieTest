@@ -28,9 +28,7 @@ import java.nio.ByteBuffer;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
-/**
- * Created by huangwei on 2015/5/26.
- */
+
 @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
 public class GLMovieRecorder {
     private static final String TAG = "GLMovieRecorder";

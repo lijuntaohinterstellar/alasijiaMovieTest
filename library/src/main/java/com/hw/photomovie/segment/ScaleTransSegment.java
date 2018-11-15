@@ -10,9 +10,7 @@ import com.hw.photomovie.segment.layer.SubtitleLayer;
 
 import java.util.List;
 
-/**
- * Created by huangwei on 2015/6/10.
- */
+
 public class ScaleTransSegment extends AbsLayerSegment{
 
     private static final int SCALE_DURATION_SHORT = 2000;

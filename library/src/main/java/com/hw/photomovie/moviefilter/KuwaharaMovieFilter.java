@@ -6,9 +6,7 @@ import android.opengl.GLES20;
 import com.hw.photomovie.PhotoMovie;
 import com.hw.photomovie.opengl.FboTexture;
 
-/**
- * Created by huangwei on 2018/9/8.
- */
+
 public class KuwaharaMovieFilter extends BaseMovieFilter {
     public static final String KUWAHARA_FRAGMENT_SHADER = "" +
             "varying highp vec2 textureCoordinate;\n" +

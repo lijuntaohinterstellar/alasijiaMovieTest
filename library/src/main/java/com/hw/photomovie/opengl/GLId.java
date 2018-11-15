@@ -3,11 +3,7 @@ package com.hw.photomovie.opengl;
 import javax.microedition.khronos.opengles.GL11;
 import javax.microedition.khronos.opengles.GL11ExtensionPack;
 
-/**
- * @Author Jituo.Xuan
- * @Date 11:40:51 AM Mar 20, 2014
- * @Comments:This mimics corresponding GL functions.
- */
+
 public interface GLId {
     public int generateTexture();
 

@@ -12,9 +12,7 @@ import java.util.Vector;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/**
- * Created by huangwei on 2015/5/25.
- */
+
 public class PhotoSource implements PhotoData.OnDataLoadListener {
     private static final String TAG = "PhotoSource";
     /**

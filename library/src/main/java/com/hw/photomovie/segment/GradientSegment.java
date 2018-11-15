@@ -2,9 +2,7 @@ package com.hw.photomovie.segment;
 
 import com.hw.photomovie.opengl.GLESCanvas;
 
-/**
- * Created by huangwei on 2018/9/12 0012.
- */
+
 public class GradientSegment extends FitCenterSegment {
     /**
      * 缩放动画范围

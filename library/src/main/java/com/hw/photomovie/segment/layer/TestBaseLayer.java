@@ -5,9 +5,7 @@ import android.graphics.RectF;
 import com.hw.photomovie.opengl.BitmapTexture;
 import com.hw.photomovie.opengl.GLESCanvas;
 
-/**
- * Created by huangwei on 2015/6/3.
- */
+
 public class TestBaseLayer extends MovieLayer {
 
     protected BitmapTexture mBitmapTexture;

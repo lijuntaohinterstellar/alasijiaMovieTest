@@ -5,9 +5,7 @@ import android.animation.ValueAnimator;
 import android.view.animation.LinearInterpolator;
 import com.hw.photomovie.PhotoMovie;
 
-/**
- * Created by yellowcat on 2015/6/12.
- */
+
 public class MovieTimer implements IMovieTimer, ValueAnimator.AnimatorUpdateListener, Animator.AnimatorListener {
 
     private final ValueAnimator mAnimator;

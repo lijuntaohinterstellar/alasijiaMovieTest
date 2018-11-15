@@ -5,9 +5,7 @@ import com.hw.photomovie.segment.layer.MovieTextLayer;
 import com.hw.photomovie.segment.layer.TestBaseLayer;
 import com.hw.photomovie.segment.layer.TestMuiltBitmapLayer;
 
-/**
- * Created by huangwei on 2015/6/4.
- */
+
 public class TestLayerSegment extends AbsLayerSegment {
 
     public TestLayerSegment() {

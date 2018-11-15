@@ -3,9 +3,7 @@ package com.hw.photomovie.segment.animation;
 import android.graphics.Rect;
 import android.graphics.RectF;
 
-/**
- * 作用在图片本身Rect的动画，可用于缩放平移
- */
+
 public abstract class SrcAnimation extends SegmentAnimation {
 
     protected Rect mSrcRect;

@@ -9,9 +9,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 
-/**
- * Created by huangwei on 2015/6/8.
- */
+
 public class MovieFilter {
 
     protected static final String VERTEX_SHADER = "" +

@@ -3,7 +3,6 @@ package com.hw.photomovie.filter;
 import android.opengl.GLES20;
 
 /**
- * Created by huangwei on 2015/6/19.
  * 只展示所给的两条之间中间部分图片内容
  */
 public class BetweenLinesFilter extends MovieFilter {

@@ -2,9 +2,7 @@ package com.hw.photomovie.filter;
 
 import android.opengl.GLES20;
 
-/**
- * Created by huangwei on 2015/6/23.
- */
+
 public class OldMovieFilter extends MovieFilter {
     protected static final String FRAGMENT_SHADER = "precision highp float;\n" +
             "            varying vec2 textureCoordinate;\n" +

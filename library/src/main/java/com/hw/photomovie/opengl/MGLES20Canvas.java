@@ -1,8 +1,6 @@
 package com.hw.photomovie.opengl;
 
-/**
- * Created by huangwei on 2015/5/29.
- */
+
 public class MGLES20Canvas extends GLES20Canvas{
 
     private int mSavedHashcode;

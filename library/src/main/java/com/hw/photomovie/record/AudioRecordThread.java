@@ -21,9 +21,7 @@ import java.util.Map;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
-/**
- * Created by huangwei on 2018/10/18.
- */
+
 @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
 public class AudioRecordThread extends Thread {
     private static final String TAG = "AudioRecordThread";

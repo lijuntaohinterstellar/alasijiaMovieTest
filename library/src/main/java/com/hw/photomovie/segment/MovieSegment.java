@@ -12,9 +12,7 @@ import java.nio.IntBuffer;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by huangwei on 2015/5/25.
- */
+
 public abstract class MovieSegment<T> {
 
     protected boolean IS_DURATION_VARIABLE = false;

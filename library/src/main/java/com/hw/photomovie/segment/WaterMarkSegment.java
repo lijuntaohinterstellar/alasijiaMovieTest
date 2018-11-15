@@ -8,9 +8,7 @@ import com.hw.photomovie.opengl.BitmapTexture;
 import com.hw.photomovie.opengl.GLESCanvas;
 import com.hw.photomovie.util.ScaleType;
 
-/**
- * Created by huangwei on 2018/10/26.
- */
+
 public class WaterMarkSegment extends SingleBitmapSegment implements Cloneable{
 
     private Bitmap mBitmap;

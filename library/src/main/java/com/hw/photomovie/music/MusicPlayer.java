@@ -9,9 +9,7 @@ import android.os.Handler;
 import java.io.FileDescriptor;
 import java.io.IOException;
 
-/**
- * Created by huangwei on 2015/6/1.
- */
+
 public class MusicPlayer implements IMusicPlayer {
     private static final int FADE_DURATION = 1800;
 

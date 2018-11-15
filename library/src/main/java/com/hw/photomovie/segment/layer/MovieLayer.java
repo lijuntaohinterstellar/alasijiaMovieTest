@@ -7,9 +7,7 @@ import com.hw.photomovie.segment.BitmapInfo;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by huangwei on 2015/6/3.
- */
+
 public abstract class MovieLayer {
 
     protected List<BitmapInfo> mBitmapInfos = new ArrayList<BitmapInfo>();

@@ -6,9 +6,7 @@ import com.hw.photomovie.segment.animation.SegmentAnimation;
 import com.hw.photomovie.segment.animation.SrcScaleAnimation;
 import com.hw.photomovie.segment.animation.SrcTransAnimation;
 
-/**
- * Created by huangwei on 2015/5/29.
- */
+
 public class ThawSegment extends SingleBitmapSegment {
 
     private SegmentAnimation mSrcAnimation;

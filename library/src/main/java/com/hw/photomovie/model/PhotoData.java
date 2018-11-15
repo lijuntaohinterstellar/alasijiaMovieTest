@@ -2,9 +2,7 @@ package com.hw.photomovie.model;
 
 import android.graphics.Bitmap;
 
-/**
- * Created by huangwei on 2015/5/25.
- */
+
 public abstract class PhotoData {
 
     public static final int STATE_ERROR = -1;

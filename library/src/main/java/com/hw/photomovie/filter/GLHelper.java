@@ -6,9 +6,7 @@ import android.opengl.GLUtils;
 import android.util.Log;
 import com.hw.photomovie.util.MLog;
 
-/**
- * Created by huangwei on 2015/6/8.
- */
+
 public class GLHelper {
 
     private static final String TAG = "GLHelper";

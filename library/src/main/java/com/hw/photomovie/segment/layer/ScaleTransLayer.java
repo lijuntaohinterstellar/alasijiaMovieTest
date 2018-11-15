@@ -11,9 +11,7 @@ import com.hw.photomovie.segment.animation.SrcAnimation;
 import com.hw.photomovie.segment.animation.SrcLeftRightAnimation;
 import com.hw.photomovie.segment.animation.SrcScaleAnimation;
 
-/**
- * Created by huangwei on 2015/6/10.
- */
+
 public class ScaleTransLayer extends MovieLayer {
 
     private SrcAnimation mSrcAnimation;

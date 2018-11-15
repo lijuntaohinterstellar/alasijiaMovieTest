@@ -1,8 +1,6 @@
 package com.hw.photomovie.filter;
 
-/**
- * Created by huangwei on 2015/6/23.
- */
+
 public class GrayFilter extends MovieFilter {
 
     protected static final String FRAGMENT_SHADER = "" +

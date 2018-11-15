@@ -17,9 +17,7 @@ import com.hw.photomovie.util.AppResources;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by huangwei on 2015/6/9.
- */
+
 public class MovieTextLayer extends MovieLayer {
     private String mText = "啦啦啦，啦啦啦\n我是卖报的小行家。";
     private TextPaint mTextPaint;

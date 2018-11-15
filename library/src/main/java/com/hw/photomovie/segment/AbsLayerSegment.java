@@ -6,9 +6,7 @@ import com.hw.photomovie.segment.layer.MovieLayer;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by huangwei on 2015/6/3.
- */
+
 public abstract class AbsLayerSegment extends MulitBitmapSegment {
 
     protected MovieLayer[] mLayers;

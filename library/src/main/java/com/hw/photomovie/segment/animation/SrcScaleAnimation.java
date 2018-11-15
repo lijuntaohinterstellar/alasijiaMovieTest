@@ -4,9 +4,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import com.hw.photomovie.util.PhotoUtil;
 
-/**
- * Created by huangwei on 2015/5/29.
- */
+
 public class SrcScaleAnimation extends SrcAnimation {
 
     private float mFrom;

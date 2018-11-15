@@ -1,8 +1,6 @@
 package com.hw.photomovie.timer;
 
-/**
- * Created by huangwei on 2015/5/25.
- */
+
 public interface IMovieTimer {
 
     public void start();

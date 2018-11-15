@@ -10,9 +10,7 @@ import com.hw.photomovie.util.AppResources;
 
 import static com.hw.photomovie.util.AppResources.loadShaderFromAssets;
 
-/**
- * Created by huangwei on 2018/9/8.
- */
+
 public class LutMovieFilter extends TwoTextureMovieFilter {
 
     public LutMovieFilter(Bitmap lutBitmap){

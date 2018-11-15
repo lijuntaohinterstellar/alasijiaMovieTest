@@ -4,9 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.graphics.RectF;
 
-/**
- * Created by huangwei on 14-12-31.
- */
+
 public class PhotoUtil {
     /**
      * 根据toWidth和toHieght，返回适用于bitmap的srcRect,只裁剪不压缩

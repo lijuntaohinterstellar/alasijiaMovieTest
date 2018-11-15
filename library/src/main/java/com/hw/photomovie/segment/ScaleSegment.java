@@ -8,9 +8,7 @@ import com.hw.photomovie.segment.animation.SrcAnimation;
 import com.hw.photomovie.segment.animation.SrcScaleAnimation;
 import com.hw.photomovie.util.Utils;
 
-/**
- * Created by huangwei on 2015/5/30.
- */
+
 public class ScaleSegment extends SingleBitmapSegment {
 
     private SrcAnimation mSrcAnimation;

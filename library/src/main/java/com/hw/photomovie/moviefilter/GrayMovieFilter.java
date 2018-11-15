@@ -1,8 +1,6 @@
 package com.hw.photomovie.moviefilter;
 
-/**
- * Created by huangwei on 2018/9/8.
- */
+
 public class GrayMovieFilter extends BaseMovieFilter {
     protected static final String FRAGMENT_SHADER = "" +
             "varying highp vec2 textureCoordinate;\n" +

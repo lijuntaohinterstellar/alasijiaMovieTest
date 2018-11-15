@@ -3,9 +3,7 @@ package com.hw.photomovie.util;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-/**
- * Created by huangwei on 2018/9/6 0006.
- */
+
 public class SystemPropertiesUtil {
 
     public static int getInt(String key, int defaultValue) {

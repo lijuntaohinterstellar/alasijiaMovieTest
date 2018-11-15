@@ -12,9 +12,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by huangwei on 2015/6/3.
- */
+
 public abstract class MulitBitmapSegment extends GLMovieSegment implements PhotoData.OnDataLoadListener {
 
     protected Map<PhotoData, BitmapInfo> mPhotoDataMap = new HashMap<PhotoData, BitmapInfo>();

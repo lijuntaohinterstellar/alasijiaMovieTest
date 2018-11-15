@@ -5,9 +5,7 @@ import com.hw.photomovie.record.gles.GlUtil;
 
 import javax.microedition.khronos.opengles.GL11;
 
-/**
- * Created by huangwei on 2018/9/5 0005.
- */
+
 public class FboTexture extends BasicTexture {
 
     private int mFrameBuffer;

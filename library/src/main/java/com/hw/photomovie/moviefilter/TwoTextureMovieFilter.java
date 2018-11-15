@@ -14,9 +14,7 @@ import java.nio.FloatBuffer;
 
 import static com.hw.photomovie.util.AppResources.loadShaderFromAssets;
 
-/**
- * Created by huangwei on 2015/6/8.
- */
+
 public class TwoTextureMovieFilter extends BaseMovieFilter {
 
     public int mTexture2CoordinateAttribute;

@@ -3,9 +3,7 @@ package com.hw.photomovie.segment;
 import android.opengl.GLES20;
 import com.hw.photomovie.opengl.GLESCanvas;
 
-/**
- * Created by huangwei on 2018/9/12 0012.
- */
+
 public class GradientTransferSegment extends TransitionSegment<FitCenterScaleSegment, FitCenterScaleSegment> {
     /**
      * 缩放动画范围

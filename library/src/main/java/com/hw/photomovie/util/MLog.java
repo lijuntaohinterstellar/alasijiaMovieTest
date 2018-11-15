@@ -2,9 +2,7 @@ package com.hw.photomovie.util;
 
 import android.util.Log;
 
-/**
- * Created by huangwei on 2015/5/25.
- */
+
 public class MLog {
 
     public static final boolean DEBUG = true;

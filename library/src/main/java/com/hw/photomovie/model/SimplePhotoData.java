@@ -13,9 +13,7 @@ import java.net.URL;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-/**
- * Created by huangwei on 2018/9/3 0003.
- */
+
 public class SimplePhotoData extends PhotoData {
 
     private ExecutorService mPool = Executors.newFixedThreadPool(4);

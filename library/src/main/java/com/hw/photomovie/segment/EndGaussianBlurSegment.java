@@ -8,7 +8,6 @@ import com.hw.photomovie.util.AppResources;
 import com.hw.photomovie.util.stackblur.StackBlurManager;
 
 /**
- * Created by huangwei on 2015/6/23.
  * 用于做电影结束时的高斯模糊效果
  */
 public class EndGaussianBlurSegment extends GLMovieSegment {

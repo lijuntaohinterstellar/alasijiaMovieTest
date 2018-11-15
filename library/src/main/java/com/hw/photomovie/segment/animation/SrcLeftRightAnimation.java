@@ -5,7 +5,6 @@ import android.graphics.RectF;
 import com.hw.photomovie.util.PhotoUtil;
 
 /**
- * Created by huangwei on 2015/6/10.
  * 从最左边扫到最右边
  */
 public class SrcLeftRightAnimation extends SrcAnimation {

@@ -17,8 +17,6 @@ import java.io.IOException;
 import java.io.InterruptedIOException;
 
 /**
- * @Author Jituo.Xuan
- * @Date 6:34:48 PM Mar 20, 2014
  * @Comments:null
  */
 public class Utils {

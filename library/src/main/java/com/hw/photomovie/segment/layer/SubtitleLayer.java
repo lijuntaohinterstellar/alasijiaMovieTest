@@ -15,9 +15,7 @@ import com.hw.photomovie.util.PhotoUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by huangwei on 2015/6/10.
- */
+
 public class SubtitleLayer extends MovieLayer {
 
     private static final int MAX_LEN = 15;

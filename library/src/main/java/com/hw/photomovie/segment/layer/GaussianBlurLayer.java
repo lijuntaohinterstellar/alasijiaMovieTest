@@ -9,9 +9,7 @@ import com.hw.photomovie.util.stackblur.StackBlurManager;
 
 import java.util.List;
 
-/**
- * Created by huangwei on 2015/6/10.
- */
+
 public class GaussianBlurLayer extends MovieLayer {
     public static final int BLUR_RADIUS_DEFAULT = 10;
     private BitmapInfo mBitmapInfo;

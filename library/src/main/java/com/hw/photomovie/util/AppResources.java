@@ -10,9 +10,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-/**
- * Created by huangwei on 2015/6/4.
- */
+
 public class AppResources {
 
     private Resources mResources;

@@ -6,9 +6,7 @@ import com.hw.photomovie.opengl.GLESCanvas;
 import com.hw.photomovie.util.PhotoUtil;
 import com.hw.photomovie.util.ScaleType;
 
-/**
- * Created by huangwei on 2018/9/4 0004.
- */
+
 public class FitCenterSegment extends SingleBitmapSegment {
 
     private Matrix mScaleMatrix = new Matrix();

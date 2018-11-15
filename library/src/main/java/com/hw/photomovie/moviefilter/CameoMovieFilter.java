@@ -6,9 +6,7 @@ import android.opengl.GLES20;
 import com.hw.photomovie.PhotoMovie;
 import com.hw.photomovie.opengl.FboTexture;
 
-/**
- * Created by huangwei on 2018/9/8.
- */
+
 public class CameoMovieFilter extends BaseMovieFilter {
 
     protected static final String FRAGMENT_SHADER = 

@@ -3,9 +3,7 @@ package com.hw.photomovie.segment.animation;
 import android.graphics.Matrix;
 import android.graphics.RectF;
 
-/**
- * Created by huangwei on 2015/6/10.
- */
+
 public class DstScaleAnimation extends DstAnimation {
 
     private float mFromScale;

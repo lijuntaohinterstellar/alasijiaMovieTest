@@ -4,9 +4,7 @@ import android.animation.TimeInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import com.hw.photomovie.opengl.GLESCanvas;
 
-/**
- * Created by huangwei on 2018/9/4 0004.
- */
+
 public class MoveTransitionSegment extends TransitionSegment<FitCenterSegment, FitCenterSegment> {
 
     public static int DIRECTION_HORIZON = 0;
